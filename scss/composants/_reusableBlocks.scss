@@ -1,0 +1,10 @@
+.buttonGradient
+{
+    color: white;
+    border-radius: 27px;
+    border: none;
+    font-size: 90%;
+    background: $color-primary;
+    background: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%);
+}
+

@@ -1,0 +1,11 @@
+@mixin mainShadowing
+{
+    -webkit-box-shadow: 0px 14px 15px -7px rgba(0,0,0,0.13); 
+    box-shadow: 0px 14px 15px -7px rgba(0,0,0,0.13);
+}
+
+@mixin softShadowing
+{
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.12); 
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.12);
+}

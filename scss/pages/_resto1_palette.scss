@@ -1,0 +1,100 @@
+
+    .coverPicture
+    {
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu
+    {
+        display: flex;
+        border-radius: 27px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: -15% 0 0 0;
+        padding: 3% 0 5% 0;
+        background-color: $background-color-light;
+
+        &__title
+        {
+            display: flex;
+            width: 90%;
+            align-items: center;
+            justify-content: space-between;
+            
+
+            &__text
+            {
+                font-family: 'Shrikhand', cursive;
+                font-weight: normal;
+            }
+            &__like
+            {
+                font-size: 150%;
+                margin: 0 5% 0 0;
+            }
+        }
+       
+
+        &__dishesChoice
+        {
+            height: 350px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0 0 5% 0;
+
+            &__h2
+            {
+                text-align: left;
+                font-weight: 80%;
+                margin: 0;
+                padding: 0;
+                
+            }
+            &__dish
+            {
+                height: 80px;
+                display: flex;
+                align-items: center;
+                
+                border-radius: 15px 15px 15px 15px;
+                background-color: white;
+
+                @include mainShadowing;
+
+                &__descriptiveText
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    margin: 0 0 0 3%;
+
+                    & h3
+                    {
+                        
+                        margin: 0;
+                        padding: 0;
+                    }
+                    & p
+                    {
+                        margin: 0;
+                        padding: 0;
+                        
+                    }
+
+                }
+            }
+        }
+        & .orderButton
+        {
+            font-weight: bold;
+            font-size: 110%;
+            width: 190px;
+            height: 40px;
+            margin: 5% 0 8% 0;
+            @include mainShadowing;
+        }
+    }

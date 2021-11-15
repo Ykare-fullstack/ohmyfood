@@ -1,0 +1,101 @@
+* 
+{
+	font-family: 'Roboto', sans-serif;	/* applying the font */
+
+	box-sizing: content-box; /* Opera/IE 8+ */
+	-moz-box-sizing: content-box; /* Firefox, others  */
+    -webkit-box-sizing: content-box; /* Safari/Chrome, others */ 
+    & h1
+    {
+        font-size: $main-title-size;
+        font-weight: bold;
+    }
+}
+body
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+    & .header
+    {
+    display: flex;
+    min-height: 60px;
+    padding: 4% 0 0 0;
+    position: relative;
+    @include softShadowing;
+        &__cont
+        {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+
+
+            &__icon
+            {
+                font-size: 120%;
+                position: absolute;
+                top: 40%;
+                left: 25px;
+                color: black;
+            }
+            &__img
+            {
+                width: 45%;
+            }
+        }
+
+    }
+
+    & .footer
+    {
+    background-color: $background-footer;
+    color: white;
+    padding-bottom: 7%;
+        &__title
+        {
+            font-family: 'Shrikhand', cursive;
+            margin-left: 6%;
+        }
+        &__menu
+        {
+            display: flex;
+            flex-direction: column;
+            height: 130px;
+            align-items: left;
+            list-style-type: none;
+            margin: 0 0 0 6%;
+            padding: 0;
+
+            &__item
+            {
+                display: flex;
+                margin-bottom: 2%;
+                align-items: center;
+
+                & .fa-utensils
+                {
+                    margin-right: 3%;
+                    font-size: 60%;
+                }
+                
+                & .fa-hands-helping
+                {
+                    margin-right: 2%;
+                    font-size: 50%;
+                }
+            }
+
+            & a
+            {
+                font-weight: normal;
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
+
+

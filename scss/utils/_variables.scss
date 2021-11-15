@@ -1,0 +1,11 @@
+$color-primary: #9356DC; 
+$color-primary-light: lighten($color-primary,35%);
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+
+$background-color-light: #F2F2F2;
+$background-color-dark: darken($background-color-light, 5%);
+$background-footer: darken($background-color-light,70%);
+
+$main-title-size: 150%;
