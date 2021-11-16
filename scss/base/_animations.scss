@@ -1,0 +1,35 @@
+.menu__dishesChoice__dish
+{
+    &:active
+    {
+        
+    }
+}
+
+
+@keyframes appearingMenu
+{
+        0% 
+        {
+            transform: translateY(10px);
+            opacity: 0;
+        }
+        100%
+        {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    
+}
+
+@keyframes checkDish
+{
+    0%
+    {
+        transform:translateX(55px)
+    }
+    100%
+    {
+        transform: translateX(0);
+    }
+}

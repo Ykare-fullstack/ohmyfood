@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet"> 
 
     <link rel="stylesheet" href="css/style.css"/>
     <!-- we set the viewport to the screen width to avoid unwanted zooms from mobile browser -->
@@ -61,35 +61,43 @@
 
         <h1>Restaurants</h1>
 
-        <a class="restaurants__thumbnail" href="./resto1_palette.html">
-            <div class="restaurants__thumbnail__img"><img src="./assets/palette.jpg" alt="photo la palette du goût"/></div>
-            <h2>La palette du goût</h2>
-            <p class="restaurants__thumbnail__location">Ménilmontant</p>
-            <i class="far fa-heart restaurants__thumbnail_like"></i>
+        <div class="restaurants__thumbnail">
+            <a class="restaurants__thumbnail__img"  href="./resto1_palette.html"><img src="./assets/palette.jpg" alt="photo la palette du goût"/></a>
+            <div class="restaurants__thumbnail__textWrapper">
+                <h2>La palette du goût</h2>
+                <p class="restaurants__thumbnail__location">Ménilmontant</p>
+            </div>
+            <a class="far fa-heart likeIcon" href="#"></a>
             <p class="restaurants__thumbnail__new">Nouveau</p>
-        </a>
+        </div>
         
-        <a class="restaurants__thumbnail" href="./resto2_enchantee.html">
-            <div class="restaurants__thumbnail__img"><img src="./assets/enchantee.jpg" alt="photo La note enchantée"/></div>
-            <h2>La note enchantée</h2>
-            <p class="restaurants__thumbnail__location">Charonne</p>
-            <i class="far fa-heart restaurants__thumbnail_like"></i>
+        <div class="restaurants__thumbnail" >
+            <a class="restaurants__thumbnail__img" href="./resto2_enchantee.html"><img src="./assets/enchantee.jpg" alt="photo La note enchantée"/></a>
+            <div class="restaurants__thumbnail__textWrapper">   
+                <h2>La note enchantée</h2>
+                <p class="restaurants__thumbnail__location">Charonne</p>
+            </div> 
+            <a class="far fa-heart likeIcon" href="#"></a>
             <p class="restaurants__thumbnail__new">Nouveau</p>
-        </a>
+        </div>
 
-        <a class="restaurants__thumbnail" href="./resto3_française.html">
-            <div class="restaurants__thumbnail__img"><img src="./assets/française.jpg" alt="photo A la française"/></div>
-            <h2>À la française</h2>
-            <p class="restaurants__thumbnail__location">Cité rouge</p>
-            <i class="far fa-heart restaurants__thumbnail_like"></i>
-        </a>
+        <div class="restaurants__thumbnail">
+            <a class="restaurants__thumbnail__img" href="./resto3_française.html"><img src="./assets/française.jpg" alt="photo A la française"/></a>
+            <div class="restaurants__thumbnail__textWrapper">
+                <h2>À la française</h2>
+                <p class="restaurants__thumbnail__location">Cité rouge</p>
+            </div>
+            <a class="far fa-heart likeIcon" href="#"></a>
+        </div>
 
-        <a class="restaurants__thumbnail" href="./resto4_delice.html">
-            <div class="restaurants__thumbnail__img"><img src="./assets/delice.jpg" alt="photo Le délice des sens"/></div>
-            <h2>Le délice des sens</h2>
-            <p class="restaurants__thumbnail__location">Folie-Mélancourt</p>
-            <i class="far fa-heart restaurants__thumbnail_like"></i>
-        </a>
+        <div class="restaurants__thumbnail">
+            <a class="restaurants__thumbnail__img" href="./resto4_delice.html"><img src="./assets/delice.jpg" alt="photo Le délice des sens"/></a>
+            <div class="restaurants__thumbnail__textWrapper">
+                <h2>Le délice des sens</h2>
+                <p class="restaurants__thumbnail__location">Folie-Mélancourt</p>
+            </div>
+            <a class="far fa-heart likeIcon" href="#"></a>
+        </div>
     </section>
     
     <footer class="footer">

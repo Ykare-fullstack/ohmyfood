@@ -9,3 +9,9 @@
     -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.12); 
     box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.12);
 }
+
+@mixin hoverShadowing
+{
+    -webkit-box-shadow: 0px 14px 15px -2px rgba(0,0,0,0.37); 
+    box-shadow: 0px 14px 15px -2px rgba(0,0,0,0.37);
+}

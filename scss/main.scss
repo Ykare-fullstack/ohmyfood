@@ -1,9 +1,12 @@
 @import "./utils/variables.scss";
+@import "./utils/mixins.scss";
 
 
-@import "./composants/reusableBlocks.scss";
-@import "./composants/mixins.scss";
+
 @import "./base/fondations.scss";
+@import "./base/animations";
+@import "./composants/reusableBlocks.scss";
+
 
 @import "./pages/accueil.scss";
 @import "./pages/resto1_palette.scss";

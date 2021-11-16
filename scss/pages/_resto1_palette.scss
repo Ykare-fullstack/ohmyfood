@@ -27,15 +27,15 @@
             &__text
             {
                 font-family: 'Shrikhand', cursive;
-                font-weight: normal;
+                font-weight: 300;
+                font-size: 170%;
+
             }
-            &__like
+            & .fa-heart
             {
-                font-size: 150%;
                 margin: 0 5% 0 0;
             }
         }
-       
 
         &__dishesChoice
         {
@@ -43,48 +43,124 @@
             width: 90%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-evenly;
             margin: 0 0 5% 0;
 
-            &__h2
+            @for $i from 1 through 3
+                {
+                    .dish#{$i}
+                    {
+                        animation: appearingMenu 1s;
+                        animation-fill-mode: both;
+                        animation-delay: calc(#{$i} * 300ms);
+                    }
+                }
+
+            & h2
             {
+                display: flex;
                 text-align: left;
-                font-weight: 80%;
-                margin: 0;
-                padding: 0;
-                
+                font-weight: 300;
+                font-size: 110%;
+                width: 45px;
+                border-bottom: solid $color-tertiary;
+                margin: 0 0 0 1.5%;
+                padding: 0 0 1.5% 0;
             }
             &__dish
             {
-                height: 80px;
+                height: 65px;
+                width: 350px;
                 display: flex;
+                justify-content: space-between;
                 align-items: center;
-                
+                margin-top: 1%;
+                padding: 0;
                 border-radius: 15px 15px 15px 15px;
+                border: none;
+                overflow: hidden;
                 background-color: white;
-
                 @include mainShadowing;
 
+                
                 &__descriptiveText
                 {
                     display: flex;
+                    height: auto;
                     flex-direction: column;
-                    justify-content: space-evenly;
+                    text-align: left;
                     margin: 0 0 0 3%;
+                    padding-top: 1%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
 
                     & h3
                     {
-                        
-                        margin: 0;
+                        height: 30%;
+                        align-items: center;
+                        margin: 0 0 2% 0;
                         padding: 0;
+                        font-weight: bold;
+                        font-size: 130%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
-                    & p
+                    & > p
                     {
+                        height: 30%;
                         margin: 0;
                         padding: 0;
-                        
+                        font-weight: 300;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
+                }
+                &:focus
+                {
+                    
+                    & > .menu__dishesChoice__dish__priceWrapper
+                    {
+                        animation: checkDish 1s;
+                        animation-fill-mode: both;
+                    }
+                }
 
+                &__priceWrapper
+                {
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 100px;
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+
+                    transform: translateX(55px);
+                    & i
+                    {
+                        display: flex;
+                        width: 50px;
+                        font-size: 150%;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $color-tertiary;
+                        color: white;
+                        border-radius: 0 15px 15px 0;
+                    }
+                    & > p
+                    {
+                        display: flex;
+                        height: auto;
+                        width: 50px;
+                        margin: 0;
+                        padding: 0 0 10% 0;
+                        justify-content: center;
+                        align-items: flex-end;
+                        font-weight: 700;
+
+                    }
                 }
             }
         }
@@ -95,6 +171,5 @@
             width: 190px;
             height: 40px;
             margin: 5% 0 8% 0;
-            @include mainShadowing;
         }
     }
