@@ -7,6 +7,7 @@
     background: $color-primary;
     background: linear-gradient(0deg, $color-primary 0%, $color-secondary 100%);
     @include mainShadowing;
+    transition: box-shadow 200ms ease-in-out, opacity 200ms ease-in-out;
 
     &:hover
     {
@@ -14,16 +15,60 @@
         @include hoverShadowing;
     }
 }
-.likeIcon
+
+.likeIconCheckBox
 {
-    font-size: 150%;
-    color: black;
-    text-decoration: none;
-    font-weight: 300;
-    z-index: -1;
-    &:active
+    & + .likeIconCheckBox__label
     {
-        background: rgb(255,121,218);
-        background: linear-gradient(0deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%);
+        & .likeIconEmpty
+        {
+            z-index: 0;
+            color: white;
+            font-size: 145%;
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+            opacity: 1;
+            transition: opacity 1s ease-in;
+        }
+
+        & .likeIconFull
+        {
+            z-index: 1;
+            background: -webkit-linear-gradient($color-primary, $color-secondary);
+            font-size: 145%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+    }
+    &:checked 
+    {
+        & + .likeIconCheckBox__label .likeIconFull
+        {
+            opacity: 1;
+        }
+        & + .likeIconCheckBox__label .likeIconEmpty
+        {
+            opacity: 0;
+        }
+    }
+}
+
+.menu__dishesChoice__dish:checked
+{
+    & + .menu__dishesChoice__dish__label
+    {
+
+        & .menu__dishesChoice__dish__label__descriptiveText
+        {
+            min-width: 210px;
+        }
+
+        & .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle
+        {
+
+            transform: rotate(360deg);
+        }
     }
 }

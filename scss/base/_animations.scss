@@ -1,10 +1,4 @@
-.menu__dishesChoice__dish
-{
-    &:active
-    {
-        
-    }
-}
+
 
 
 @keyframes appearingMenu
@@ -21,15 +15,71 @@
         }
     
 }
+@for $i from 1 through 3
+{
+    .dish#{$i}
+    {
+        animation: appearingMenu 1s;
+        animation-fill-mode: both;
+        animation-delay: calc(#{$i} * 300ms);
+    }
+}
 
-@keyframes checkDish
+
+@keyframes checkIconSpin
 {
     0%
     {
-        transform:translateX(55px)
+        transform: rotate(0deg);
+    }
+    50%
+    {
+        transform: rotate(0deg);
     }
     100%
     {
-        transform: translateX(0);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinningMachineSpinner
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+@keyframes spinningMachineSpinnerReverse
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes spinnerFading
+{
+    0%
+    {
+        z-index: 1000;
+        opacity: 0.9;
+    }
+    95%
+    {
+        z-index: 1000;
+        opacity: 0.9;
+    }
+    100%
+    {
+        z-index: -1000;
+        opacity: 0;
     }
 }

@@ -22,7 +22,7 @@
             width: 90%;
             align-items: center;
             justify-content: space-between;
-            
+            position: relative;
 
             &__text
             {
@@ -34,6 +34,16 @@
             & .fa-heart
             {
                 margin: 0 5% 0 0;
+                position: absolute;
+                top: 35%;
+                right: 0;
+            }
+            & input[type=checkbox] + .likeIconCheckBox__label
+            {
+                & .likeIconEmpty
+                {
+                    color: #F2F2F2;
+                }             
             }
         }
 
@@ -46,16 +56,6 @@
             justify-content: space-evenly;
             margin: 0 0 5% 0;
 
-            @for $i from 1 through 3
-                {
-                    .dish#{$i}
-                    {
-                        animation: appearingMenu 1s;
-                        animation-fill-mode: both;
-                        animation-delay: calc(#{$i} * 300ms);
-                    }
-                }
-
             & h2
             {
                 display: flex;
@@ -67,109 +67,120 @@
                 margin: 0 0 0 1.5%;
                 padding: 0 0 1.5% 0;
             }
+
             &__dish
-            {
-                height: 65px;
-                width: 350px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-top: 1%;
-                padding: 0;
-                border-radius: 15px 15px 15px 15px;
-                border: none;
-                overflow: hidden;
-                background-color: white;
-                @include mainShadowing;
-
-                
-                &__descriptiveText
+            {   
+                &:checked
                 {
-                    display: flex;
-                    height: auto;
-                    flex-direction: column;
-                    text-align: left;
-                    margin: 0 0 0 3%;
-                    padding-top: 1%;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
+                    & + .menu__dishesChoice__dish__label
+                    {
 
-                    & h3
-                    {
-                        height: 30%;
-                        align-items: center;
-                        margin: 0 0 2% 0;
-                        padding: 0;
-                        font-weight: bold;
-                        font-size: 130%;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
-                    & > p
-                    {
-                        height: 30%;
-                        margin: 0;
-                        padding: 0;
-                        font-weight: 300;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
+                        & .menu__dishesChoice__dish__label__descriptiveText
+                        {
+                            min-width: 210px;
+                        }
+
+                        & .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle
+                        {
+                            animation: checkIconSpin 650ms;
+                        }
                     }
                 }
-                &:focus
+                &__label
                 {
-                    
-                    & > .menu__dishesChoice__dish__priceWrapper
-                    {
-                        animation: checkDish 1s;
-                        animation-fill-mode: both;
-                    }
-                }
-
-                &__priceWrapper
-                {
+                    height: 65px;
+                    max-width: 350px;
                     display: flex;
-                    justify-content: flex-end;
-                    width: 100px;
-                    height: 100%;
-                    margin: 0;
+                    align-items: center;
+                    margin-top: 1%;
                     padding: 0;
+                    border-radius: 15px 15px 15px 15px;
+                    border: none;
+                    overflow: hidden;
+                    background-color: white;
+                    @include mainShadowing;
 
-                    transform: translateX(55px);
-                    & i
-                    {
-                        display: flex;
-                        width: 50px;
-                        font-size: 150%;
-                        justify-content: center;
-                        align-items: center;
-                        background-color: $color-tertiary;
-                        color: white;
-                        border-radius: 0 15px 15px 0;
-                    }
-                    & > p
+                    &__descriptiveText
                     {
                         display: flex;
                         height: auto;
-                        width: 50px;
-                        margin: 0;
-                        padding: 0 0 10% 0;
-                        justify-content: center;
-                        align-items: flex-end;
-                        font-weight: 700;
+                        flex-direction: column;
+                        min-width: 270px;
+                        text-align: left;
+                        margin: 0 0 0 3%;
+                        padding-top: 1%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        transition: min-width 500ms ease-in;
 
+                        & h3
+                        {
+                            height: 30%;
+                            align-items: center;
+                            margin: 0 0 2% 0;
+                            padding: 0;
+                            font-weight: 500;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            
+                        }
+                        & > p
+                        {
+                            height: 30%;
+                            margin: 0;
+                            padding: 0;
+                            font-weight: 300;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            
+                        }
+                    }
+
+
+                    &__priceWrapper
+                    {
+                        display: flex;
+                        justify-content: flex-end;
+                        height: 100%;
+                        margin: 0;
+                        padding: 0;
+
+
+                        & .checkIcon
+                        {
+                            display: flex;
+                            width: 60px;
+                            font-size: 150%;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: $color-tertiary;
+                            color: white;
+                            border-radius: 0 15px 15px 0;
+
+                        }
+                        & > p
+                        {
+                            display: flex;
+                            height: auto;
+                            width: 60px;
+                            margin: 0;
+                            padding: 0 0 10% 0;
+                            justify-content: center;
+                            align-items: flex-end;
+                            font-weight: 700;   
+                        }
                     }
                 }
             }
         }
         & .orderButton
         {
-            font-weight: bold;
-            font-size: 110%;
-            width: 190px;
-            height: 40px;
+            font-weight: 500;
+            width: 180px;
+            height: 45px;
             margin: 5% 0 8% 0;
         }
     }
