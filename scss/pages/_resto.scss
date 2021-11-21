@@ -8,7 +8,7 @@
     .menu
     {
         display: flex;
-        border-radius: 27px;
+        border-radius: 27px 27px 0 0;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
@@ -16,13 +16,28 @@
         padding: 3% 0 5% 0;
         background-color: $background-color-light;
 
+        @media (min-width: 800px)
+        {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 3% 
+        }
+
         &__title
         {
             display: flex;
-            width: 90%;
+            width: 370px;
             align-items: center;
             justify-content: space-between;
             position: relative;
+
+
+            @media (min-width: 1190px)
+            {
+                width: 90%;
+                justify-content: center;
+            }
 
             &__text
             {
@@ -50,7 +65,7 @@
         &__dishesChoice
         {
             height: 350px;
-            width: 90%;
+            width: 370px;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
@@ -77,8 +92,10 @@
 
                         & .menu__dishesChoice__dish__label__descriptiveText
                         {
-                            min-width: 210px;
+                            min-width: 215px;
+
                         }
+                        
 
                         & .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle
                         {
@@ -89,7 +106,7 @@
                 &__label
                 {
                     height: 65px;
-                    max-width: 350px;
+                    max-width: 340px;
                     display: flex;
                     align-items: center;
                     margin-top: 1%;
@@ -108,22 +125,24 @@
                         min-width: 270px;
                         text-align: left;
                         margin: 0 0 0 3%;
-                        padding-top: 1%;
+                        padding-top: 5px;
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         transition: min-width 500ms ease-in;
 
+
                         & h3
                         {
                             height: 30%;
                             align-items: center;
-                            margin: 0 0 2% 0;
+                            margin: 0;
                             padding: 0;
                             font-weight: 500;
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
+
                             
                         }
                         & > p
@@ -135,7 +154,7 @@
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
-                            
+
                         }
                     }
 
@@ -147,6 +166,7 @@
                         height: 100%;
                         margin: 0;
                         padding: 0;
+
 
 
                         & .checkIcon
@@ -176,11 +196,25 @@
                 }
             }
         }
-        & .orderButton
+        &__buttonWrapper
         {
-            font-weight: 500;
-            width: 180px;
+            width: 370px;
             height: 45px;
-            margin: 5% 0 8% 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            @media (min-width: 1190px)
+            {
+                width: 100%;
+            }
+            
+            &__orderButton
+            {
+                font-weight: 500;
+                width: 180px;
+                height: 45px;
+                margin: 5% 0 8% 0;
+            }
         }
     }

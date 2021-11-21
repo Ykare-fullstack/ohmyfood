@@ -1,4 +1,8 @@
+/*main colors*/
+/*grey backgrounds*/
+/*Shadowing for small elements and button gradient, including hover transition*/
 * {
+  /* Robot font applied to everything and box-sizing*/
   font-family: "Roboto", sans-serif;
   /* applying the font */
   box-sizing: content-box;
@@ -8,19 +12,21 @@
   -webkit-box-sizing: content-box;
   /* Safari/Chrome, others */
 }
-* h1 {
-  font-size: 150%;
-  font-weight: bold;
-}
 
 body {
+  /*body formatting*/
   display: flex;
   flex-direction: column;
   position: relative;
   margin: 0;
   padding: 0;
+  /*____________________________________________________________*/
+  /*same header on all pages minus the return arrow in "accueil"*/
+  /*________________________*/
+  /*same footer on all pages*/
 }
 body input[type=checkbox] {
+  /*Removing checkbox from input */
   display: none;
 }
 body .header {
@@ -36,6 +42,7 @@ body .header__cont {
   width: 100%;
   justify-content: center;
   align-items: center;
+  padding: 0 0 10px 0;
 }
 body .header__cont__icon {
   font-size: 120%;
@@ -46,15 +53,22 @@ body .header__cont__icon {
 }
 body .header__cont__img {
   width: 45%;
+  max-height: 80px;
 }
 body .footer {
   background-color: #404040;
   color: white;
-  padding-bottom: 7%;
+  padding-bottom: 30px;
 }
 body .footer__title {
   font-family: "Shrikhand", cursive;
   margin-left: 6%;
+}
+@media (min-width: 700px) {
+  body .footer__title {
+    text-align: center;
+    margin-left: 0;
+  }
 }
 body .footer__menu {
   display: flex;
@@ -65,17 +79,30 @@ body .footer__menu {
   margin: 0 0 0 6%;
   padding: 0;
 }
+@media (min-width: 700px) {
+  body .footer__menu {
+    align-items: center;
+    margin: 0;
+    width: 100%;
+  }
+}
 body .footer__menu__item {
   display: flex;
-  margin-bottom: 2%;
+  margin-bottom: 10px;
   align-items: center;
 }
+@media (min-width: 700px) {
+  body .footer__menu__item {
+    width: 100%;
+    justify-content: center;
+  }
+}
 body .footer__menu__item .fa-utensils {
-  margin-right: 3%;
+  margin-right: 9px;
   font-size: 60%;
 }
 body .footer__menu__item .fa-hands-helping {
-  margin-right: 2%;
+  margin-right: 7px;
   font-size: 50%;
 }
 body .footer__menu a {
@@ -84,51 +111,7 @@ body .footer__menu a {
   color: white;
 }
 
-#pageWrapper {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.9;
-  z-index: 1000;
-}
-#pageWrapper .spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 400px;
-  width: 300px;
-  height: 300px;
-  background: #ff79da;
-  background: linear-gradient(194deg, #ff79da 0%, #9356dc 48%, #99e2d0 100%);
-  font-family: "Shrikhand", cursive;
-  border-radius: 50%;
-}
-#pageWrapper .spinner::after {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: auto;
-  right: auto;
-  margin: 0;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  opacity: 1;
-  background-color: white;
-  content: "ohmyfood";
-  font-family: "Shrikhand", cursive;
-  font-size: 180%;
-  opacity: 1;
-}
-
+/*In "menu", this animation makes dishes tabs appears on load*/
 @keyframes appearingMenu {
   0% {
     transform: translateY(10px);
@@ -139,6 +122,7 @@ body .footer__menu a {
     opacity: 1;
   }
 }
+/*loop for dish[1,2,3] in each container dishesChoice (see "resto") to appear with differents delays*/
 .dish1 {
   animation: appearingMenu 1s;
   animation-fill-mode: both;
@@ -157,6 +141,7 @@ body .footer__menu a {
   animation-delay: calc(3 * 300ms);
 }
 
+/*rotate the checkIcon (see resto) as soon as visible*/
 @keyframes checkIconSpin {
   0% {
     transform: rotate(0deg);
@@ -168,6 +153,7 @@ body .footer__menu a {
     transform: rotate(360deg);
   }
 }
+/*colored wheel spining animation on "accueil" load*/
 @keyframes spinningMachineSpinner {
   0% {
     transform: rotate(0deg);
@@ -176,6 +162,7 @@ body .footer__menu a {
     transform: rotate(360deg);
   }
 }
+/*counter rotate the inside spining wheel to keep the logo stable*/
 @keyframes spinningMachineSpinnerReverse {
   0% {
     transform: rotate(0deg);
@@ -184,6 +171,7 @@ body .footer__menu a {
     transform: rotate(-360deg);
   }
 }
+/*remove the loader from visibility and order it down below the page*/
 @keyframes spinnerFading {
   0% {
     z-index: 1000;
@@ -198,6 +186,7 @@ body .footer__menu a {
     opacity: 0;
   }
 }
+/* colored main button "explorer nos restaurants" and "commander"*/
 .buttonGradient {
   color: white;
   border-radius: 27px;
@@ -215,6 +204,70 @@ body .footer__menu a {
   box-shadow: 0px 14px 15px -2px rgba(0, 0, 0, 0.37);
 }
 
+/* white veil and spinner for page loading "accueil"*/
+/*#pageWrapper
+{
+    display: flex;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    z-index: 1000;
+    animation: spinnerFading ease-in 3s;
+    animation-fill-mode: forwards;
+
+    & .spinner
+    {   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: -webkit-sticky;
+        position: sticky;
+        top: 350px;
+
+        width: 300px;
+        height: 300px;
+        background: rgb(255,121,218);
+        background: linear-gradient(194deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 48%, rgba(153,226,208,1) 100%);
+        font-family: 'Shrikhand', cursive;
+        font-size: 150%;
+        border-radius: 50%;
+        transform:rotate(0 deg);
+
+        animation: spinningMachineSpinner 1s linear infinite;
+
+        &::after
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            top: auto;
+            right: auto;
+            margin: 0;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            opacity: 1;
+            background-color: white;
+            content:'ohmyfood';
+            font-family: 'Shrikhand', cursive;
+            font-size: 180%;
+            opacity: 1;
+
+            animation: spinningMachineSpinnerReverse 1s linear infinite;  
+        }  
+    }   
+}
+*/
+/* like icon in thumbnails and top of menu in "accueil" and "resto"*/
 .likeIconCheckBox + .likeIconCheckBox__label .likeIconEmpty {
   z-index: 0;
   color: white;
@@ -240,64 +293,6 @@ body .footer__menu a {
   opacity: 0;
 }
 
-.menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__descriptiveText {
-  min-width: 210px;
-}
-.menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle {
-  transform: rotate(360deg);
-}
-
-#pageWrapper {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.9;
-  z-index: 1000;
-  animation: spinnerFading ease-in 3s;
-  animation-fill-mode: forwards;
-}
-#pageWrapper .spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 350px;
-  width: 300px;
-  height: 300px;
-  background: #ff79da;
-  background: linear-gradient(194deg, #ff79da 0%, #9356dc 48%, #99e2d0 100%);
-  font-family: "Shrikhand", cursive;
-  font-size: 150%;
-  border-radius: 50%;
-  transform: rotate(0 deg);
-  animation: spinningMachineSpinner 1s linear infinite;
-}
-#pageWrapper .spinner::after {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: auto;
-  right: auto;
-  margin: 0;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  opacity: 1;
-  background-color: white;
-  content: "ohmyfood";
-  font-family: "Shrikhand", cursive;
-  font-size: 180%;
-  opacity: 1;
-  animation: spinningMachineSpinnerReverse 1s linear infinite;
-}
-
 .location {
   display: flex;
   flex-direction: row;
@@ -319,7 +314,7 @@ body .footer__menu a {
   font-size: 120%;
   position: absolute;
   top: 30%;
-  left: 0;
+  left: 15px;
 }
 
 .info {
@@ -329,7 +324,7 @@ body .footer__menu a {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 10% 0 0 0;
+  padding: 45px 0 0 0;
 }
 .info h1 {
   width: 70%;
@@ -345,44 +340,79 @@ body .footer__menu a {
 .info__exploreButton {
   width: 200px;
   height: 50px;
-  margin-top: 4%;
+  margin-top: 20px;
 }
 
 .functioning {
   display: flex;
-  height: 330px;
   flex-direction: column;
+  height: 330px;
+  max-height: 330px;
+  width: auto;
   justify-content: space-between;
-  align-items: flex-end;
-  padding: 15% 0 20% 0;
+  align-items: center;
+  padding: 75px 0 75px 0;
 }
-.functioning :nth-child(4) {
-  background-color: #f2eafb;
+@media (min-width: 700px) {
+  .functioning {
+    height: 200px;
+  }
 }
-.functioning :nth-child(4) i {
-  color: #9356DC;
-}
-.functioning > h1 {
-  display: flex;
-  width: 93%;
+.functioning h1 {
+  width: 320px;
   text-align: left;
   margin: 0;
   padding: 0;
 }
-.functioning__tab {
+@media (min-width: 700px) {
+  .functioning h1 {
+    text-align: center;
+  }
+}
+.functioning__cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 300px;
+  width: 520px;
+}
+@media (min-width: 700px) {
+  .functioning__cont {
+    height: 200px;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.functioning__cont > :nth-child(3) {
+  background-color: #f2eafb;
+}
+.functioning__cont > :nth-child(3) i {
+  color: #9356DC;
+}
+.functioning__cont__tab {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   height: 70px;
   border-radius: 20px;
-  margin: 0 5% 0 0;
+  margin: 0;
+  padding: 0;
   background-color: #F2F2F2;
   -webkit-box-shadow: 0px 14px 15px -7px rgba(0, 0, 0, 0.13);
   box-shadow: 0px 14px 15px -7px rgba(0, 0, 0, 0.13);
 }
-.functioning__tab__numerotation {
+@media (min-width: 700px) {
+  .functioning__cont__tab {
+    margin: 0 2% 0 2%;
+  }
+}
+.functioning__cont__tab__numerotation {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -396,12 +426,12 @@ body .footer__menu a {
   left: -10px;
   font-size: small;
 }
-.functioning__tab i {
+.functioning__cont__tab i {
   position: absolute;
   top: 28px;
   left: 35px;
 }
-.functioning__tab__text {
+.functioning__cont__tab__text {
   font-weight: 500;
 }
 
@@ -411,13 +441,45 @@ body .footer__menu a {
   justify-content: center;
   align-items: center;
   background-color: #F2F2F2;
-  padding: 12% 0 12% 0;
+  padding: 40px 0 40px 0;
 }
 .restaurants h1 {
-  width: 90%;
+  width: 340px;
   text-align: left;
 }
-.restaurants__thumbnail {
+@media (min-width: 700px) {
+  .restaurants h1 {
+    text-align: center;
+    width: 100%;
+  }
+}
+.restaurants__cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 520px;
+  overflow: hidden;
+}
+@media (min-width: 740px) {
+  .restaurants__cont {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 740px;
+    justify-content: space-evenly;
+  }
+}
+@media (min-width: 1150px) {
+  .restaurants__cont {
+    width: 800px;
+  }
+}
+@media (min-width: 1620px) {
+  .restaurants__cont {
+    width: 100%;
+  }
+}
+.restaurants__cont__thumbnail {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -425,7 +487,7 @@ body .footer__menu a {
   height: 250px;
   flex-wrap: wrap;
   max-height: 280px;
-  margin: 0 0 5% 0;
+  margin: 0 0 15px 0;
   background-color: white;
   border-radius: 15px 15px 15px 15px;
   text-decoration: none;
@@ -434,20 +496,25 @@ body .footer__menu a {
   -webkit-box-shadow: 0px 14px 15px -7px rgba(0, 0, 0, 0.13);
   box-shadow: 0px 14px 15px -7px rgba(0, 0, 0, 0.13);
 }
-.restaurants__thumbnail__img {
+@media (min-width: 700px) {
+  .restaurants__cont__thumbnail {
+    margin: 0 2% 15px 2%;
+  }
+}
+.restaurants__cont__thumbnail__img {
   display: flex;
   max-height: 175px;
   border-radius: 15px 15px 0 0;
   overflow: hidden;
 }
-.restaurants__thumbnail__img img {
+.restaurants__cont__thumbnail__img img {
   padding: 0;
   margin: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.restaurants__thumbnail__textWrapper {
+.restaurants__cont__thumbnail__textWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -457,23 +524,23 @@ body .footer__menu a {
   flex-wrap: wrap;
   margin: 2% 0 0 3%;
 }
-.restaurants__thumbnail__textWrapper h2 {
+.restaurants__cont__thumbnail__textWrapper h2 {
   margin: 0;
   padding: 0;
   font-weight: 500;
   font-size: 110%;
 }
-.restaurants__thumbnail__textWrapper p {
+.restaurants__cont__thumbnail__textWrapper p {
   margin: 1% 0 0 0;
   padding: 0;
   font-weight: 300;
 }
-.restaurants__thumbnail .fa-heart {
+.restaurants__cont__thumbnail .fa-heart {
   position: absolute;
   bottom: 30px;
   right: 15px;
 }
-.restaurants__thumbnail__new {
+.restaurants__cont__thumbnail__new {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -495,7 +562,7 @@ body .footer__menu a {
 
 .menu {
   display: flex;
-  border-radius: 27px;
+  border-radius: 27px 27px 0 0;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
@@ -503,12 +570,26 @@ body .footer__menu a {
   padding: 3% 0 5% 0;
   background-color: #F2F2F2;
 }
+@media (min-width: 800px) {
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 3%;
+  }
+}
 .menu__title {
   display: flex;
-  width: 90%;
+  width: 370px;
   align-items: center;
   justify-content: space-between;
   position: relative;
+}
+@media (min-width: 1190px) {
+  .menu__title {
+    width: 90%;
+    justify-content: center;
+  }
 }
 .menu__title__text {
   font-family: "Shrikhand", cursive;
@@ -526,7 +607,7 @@ body .footer__menu a {
 }
 .menu__dishesChoice {
   height: 350px;
-  width: 90%;
+  width: 370px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -543,14 +624,14 @@ body .footer__menu a {
   padding: 0 0 1.5% 0;
 }
 .menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__descriptiveText {
-  min-width: 210px;
+  min-width: 215px;
 }
 .menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle {
   animation: checkIconSpin 650ms;
 }
 .menu__dishesChoice__dish__label {
   height: 65px;
-  max-width: 350px;
+  max-width: 340px;
   display: flex;
   align-items: center;
   margin-top: 1%;
@@ -569,7 +650,7 @@ body .footer__menu a {
   min-width: 270px;
   text-align: left;
   margin: 0 0 0 3%;
-  padding-top: 1%;
+  padding-top: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -578,7 +659,7 @@ body .footer__menu a {
 .menu__dishesChoice__dish__label__descriptiveText h3 {
   height: 30%;
   align-items: center;
-  margin: 0 0 2% 0;
+  margin: 0;
   padding: 0;
   font-weight: 500;
   white-space: nowrap;
@@ -621,7 +702,19 @@ body .footer__menu a {
   align-items: flex-end;
   font-weight: 700;
 }
-.menu .orderButton {
+.menu__buttonWrapper {
+  width: 370px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1190px) {
+  .menu__buttonWrapper {
+    width: 100%;
+  }
+}
+.menu__buttonWrapper__orderButton {
   font-weight: 500;
   width: 180px;
   height: 45px;
