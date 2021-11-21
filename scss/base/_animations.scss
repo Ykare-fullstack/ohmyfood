@@ -17,7 +17,7 @@
 }
 
 /*loop for dish[1,2,3] in each container dishesChoice (see "resto") to appear with differents delays*/
-@for $i from 1 through 3
+@for $i from 1 through 4
 {
     .dish#{$i}
     {
@@ -34,7 +34,7 @@
     {
         transform: rotate(0deg);
     }
-    50%
+    35%
     {
         transform: rotate(0deg);
     }

@@ -1,5 +1,5 @@
 
-
+/* location tab under the header not active yet, only aesthetic implemented*/
 .location
 {
     display: flex;
@@ -30,7 +30,8 @@
         left: 15px;
     }
 }
-
+/*__________________________________________________________*/
+/* Section of lines of information regarding the application offer and explore restaurant option */
 .info
 {
     display: flex;
@@ -63,7 +64,8 @@
         margin-top: 20px;
     }
 }
-
+/*__________________________________________________________*/
+/* Informative section regarding the overall way of using the application */
 .functioning
 {
     display: flex;
@@ -75,19 +77,20 @@
     align-items: center;
     padding: 75px 0 75px 0;
 
+    /*height switch at 700px*/
     @media (min-width: 700px)
     {
         height: 200px;
     }
 
-    
     & h1
     {
         width: 320px;
         text-align: left;
         margin: 0;
         padding: 0;
-
+    
+        /*Alignement switch at 700px */
         @media (min-width: 700px)
         {  
                 text-align: center;
@@ -103,6 +106,7 @@
         height: 300px;
         width: 520px;
 
+        /*Formating switch at 700px*/
         @media (min-width: 700px)
         {
             height: 200px;
@@ -111,6 +115,8 @@
             flex-wrap: wrap;
             justify-content: center;    
         }
+
+        /*Third tab changes for icon and background color*/
         &> :nth-child(3)
         {
             background-color: $color-primary-light;
@@ -170,6 +176,9 @@
         }
     }
 }
+
+/*__________________________________________________________*/
+/* Restaurants section featuring the thumbnails of each restaurant choice */
 .restaurants
 {
     display: flex;
@@ -189,7 +198,7 @@
                 width: 100%;
             }
     }
-
+    /* container for tumbnails, to help with formatting*/
     &__cont
     {   
         display: flex;
@@ -199,6 +208,7 @@
         width: 520px;
         overflow: hidden;
 
+        /*Formatting switch to keep the thumnail section responsive to all formats */
         @media (min-width: 740px)
         {
             flex-direction: row;
@@ -292,7 +302,7 @@
                 bottom: 30px;
                 right: 15px;
             }   
-
+            
             &__new
             {
                 display: flex;

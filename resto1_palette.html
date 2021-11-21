@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="fr"></html>
+<html lang="fr">
 <head>
     <meta charset="utf-8" />
 
@@ -18,7 +18,8 @@
 </head>
 
 <body>
-
+    <!--_______________________________________________-->
+    <!--similar header as accueil -->
     <header class="header">
         <div class="header__cont">
             <a href="./accueil.html" class="header__cont__icon"><i class="fas fa-arrow-left"></i></a>
@@ -26,140 +27,158 @@
         </div>
     </header>
 
-    <img src="assets/palette.jpg" alt="photo palette" class="coverPicture"/>
+    <div class="coverPicture"><img src="assets/palette.jpg" alt="photo palette" /></div>
 
+    <!--_______________________________________________-->
+    <!--main section in 4 parts : title, entrées, plats, desserts-->
     <section class="menu">
+
+            <!--title with animated like icon-->
             <div class="menu__title">
                 <h1 class="menu__title__text">La palette du goût</h1>
                 <input type="checkbox" id="likeCheckBox" class="likeIconCheckBox">
                 <label for="likeCheckBox" class="likeIconCheckBox__label"><i class="fas fa-heart likeIconEmpty"></i><i class="fas fa-heart likeIconFull"></i></label>
             </div>
-
+        <!--_______________________________________________-->
+        <!--each dishesChoice represent the block affiliated with a part of the meal and containing 3 to 4 tabs, can contain more, see under for name clarification -->
         <div class="menu__dishesChoice">        
             <h2>ENTRÉES</h2>
 
+            <!--id=dish1 links the label to the checkbox, from 1 to n, n beeing the number TOTAL of dishes available in this restaurants (entrees, plats and desserts combined) -->
             <input type="checkbox" id="dish1" class="menu__dishesChoice__dish">
+
+                <!--class="dish1" refers here to the order of animation-->
+                <!--from 1 to n, n beeing the number of dishes tabs in the dishesChoice block (entrees, plats OR dessert, not combined)-->
                 <label for="dish1" class="menu__dishesChoice__dish__label dish1">
-                    <div class="menu__dishesChoice__dish__label__descriptiveText">
-                        <h3>Fricassée d'escargot</h3>
-                        <p>Au piment d'espelette</p>
-                    </div>
-                    <div class="menu__dishesChoice__dish__label__priceWrapper">
-                        <p>25€</p>
-                        <div class="checkIcon"><i class="fas fa-check-circle"></i></div>
-                    </div>
+                    <span class="menu__dishesChoice__dish__label__descriptiveText">
+                        <span>Fricassée d'escargot</span>
+                        <span>Au piment d'espelette</span>
+                    </span>
+
+                    <!--priceWrapper is a solid block partially hidden outside the tab and appears on checked status (on click on the checkbox menu__dishesChoice__dish) -->
+                    <span class="menu__dishesChoice__dish__label__priceWrapper">
+                        <span class ="price">25€</span>
+                        <span class="checkIcon"><i class="fas fa-check-circle"></i></span>
+                    </span>
                 </label>
+                <!--after this we repeat dishesChoice 2 times for each othe meal section and apply the same implementation -->
 
             <input type="checkbox" id="dish2" class="menu__dishesChoice__dish">
                 <label for="dish2" class="menu__dishesChoice__dish__label dish2">
-                    <div class="menu__dishesChoice__dish__label__descriptiveText">
-                        <h3>Foie gras de canard mi-cuit</h3>
-                        <p>et ses copeaux de truffe noire</p>
-                    </div>
-                    <div class="menu__dishesChoice__dish__label__priceWrapper">
-                        <p>25€</p>
-                        <div class="checkIcon"><i class="fas fa-check-circle"></i></div>
-                    </div>
+                    <span class="menu__dishesChoice__dish__label__descriptiveText">
+                        <span>Foie gras de canard mi-cuit</span>
+                        <span>et ses copeaux de truffe noire</span>
+                    </span>
+                    <span class="menu__dishesChoice__dish__label__priceWrapper">
+                        <span>25€</span>
+                        <span class="checkIcon"><i class="fas fa-check-circle"></i></span>
+                    </span>
                 </label>
 
             <input type="checkbox" id="dish3" class="menu__dishesChoice__dish">
                 <label for="dish3" class="menu__dishesChoice__dish__label dish3">
-                    <div class="menu__dishesChoice__dish__label__descriptiveText">
-                        <h3>Oeuf au plat</h3>
-                        <p>Assaisonné à la truffe sur lit de caviar</p>
-                    </div>
-                    <div class="menu__dishesChoice__dish__label__priceWrapper">
-                        <p>25€</p>
-                        <div class="checkIcon"><i class="fas fa-check-circle"></i></div>
-                    </div>
+                    <span class="menu__dishesChoice__dish__label__descriptiveText">
+                        <span>Oeuf au plat</span>
+                        <span>Assaisonné à la truffe sur lit de caviar</span>
+                    </span>
+                    <span class="menu__dishesChoice__dish__label__priceWrapper">
+                        <span>35€</span>
+                        <span class="checkIcon"><i class="fas fa-check-circle"></i></span>
+                    </span>
                 </label>
         </div>
 
+        <!--_______________________________________________-->
         <div class="menu__dishesChoice">
             <h2>PLATS</h2>
 
             <input type="checkbox" id="dish4" class="menu__dishesChoice__dish">
                 <label for="dish4" class="menu__dishesChoice__dish__label dish1">
-                    <div class="menu__dishesChoice__dish__label__descriptiveText">
-                        <h3>Filet de boeuf aux herbes</h3>
-                        <p>Accompagné de sa ribambelle de légumes</p>
-                    </div>
-                    <div class="menu__dishesChoice__dish__label__priceWrapper">
-                        <p>25€</p>
-                        <div class="checkIcon"><i class="fas fa-check-circle"></i></div>
-                    </div>
+                    <span class="menu__dishesChoice__dish__label__descriptiveText">
+                        <span>Filet de boeuf aux herbes</span>
+                        <span>Accompagné de sa ribambelle de légumes</span>
+                    </span>
+                    <span class="menu__dishesChoice__dish__label__priceWrapper">
+                        <span>20€</span>
+                        <span class="checkIcon"><i class="fas fa-check-circle"></i></span>
+                    </span>
                 </label>
 
             <input type="checkbox" id="dish5" class="menu__dishesChoice__dish">
                 <label for="dish5" class="menu__dishesChoice__dish__label dish2">
-                    <div class="menu__dishesChoice__dish__label__descriptiveText">
-                        <h3>Parmentier de queue de boeuf</h3>
-                        <p>À la truffe noire sur sa purée de panais</p>
-                    </div>
-                    <div class="menu__dishesChoice__dish__label__priceWrapper">
-                        <p>25€</p>
-                        <div class="checkIcon"><i class="fas fa-check-circle"></i></div>
-                    </div>
+                    <span class="menu__dishesChoice__dish__label__descriptiveText">
+                        <span>Parmentier de queue de boeuf</span>
+                        <span>À la truffe noire sur sa purée de panais</span>
+                    </span>
+                    <span class="menu__dishesChoice__dish__label__priceWrapper">
+                        <span>40€</span>
+                        <span class="checkIcon"><i class="fas fa-check-circle"></i></span>
+                    </span>
                 </label>
 
             <input type="checkbox" id="dish6" class="menu__dishesChoice__dish">
                 <label for="dish6" class="menu__dishesChoice__dish__label dish3">
-                    <div class="menu__dishesChoice__dish__label__descriptiveText">
-                        <h3>Filet de turbot</h3>
-                        <p>Aux agrumes</p>
-                    </div>
-                    <div class="menu__dishesChoice__dish__label__priceWrapper">
-                        <p>25€</p>
-                        <div class="checkIcon"><i class="fas fa-check-circle"></i></div>
-                    </div>
+                    <span class="menu__dishesChoice__dish__label__descriptiveText">
+                        <span>Filet de turbot</span>
+                        <span>Aux agrumes</span>
+                    </span>
+                    <span class="menu__dishesChoice__dish__label__priceWrapper">
+                        <span>35€</span>
+                        <span class="checkIcon"><i class="fas fa-check-circle"></i></span>
+                    </span>
                 </label>
         </div>
 
+        <!--_______________________________________________-->
         <div class="menu__dishesChoice">
+            
             <h2>DESSERTS</h2>
 
             <input type="checkbox" id="dish7" class="menu__dishesChoice__dish">
                 <label for="dish7" class="menu__dishesChoice__dish__label dish1">
-                    <div class="menu__dishesChoice__dish__label__descriptiveText">
-                        <h3>Paris-Brest</h3>
-                        <p>Revisité</p>
-                    </div>
-                    <div class="menu__dishesChoice__dish__label__priceWrapper">
-                        <p>25€</p>
-                        <div class="checkIcon"><i class="fas fa-check-circle"></i></div>
-                    </div>
+                    <span class="menu__dishesChoice__dish__label__descriptiveText">
+                        <span>Paris-Brest</span>
+                        <span>Revisité</span>
+                    </span>
+                    <span class="menu__dishesChoice__dish__label__priceWrapper">
+                        <span>44€</span>
+                        <span class="checkIcon"><i class="fas fa-check-circle"></i></span>
+                    </span>
                 </label>
             
             <input type="checkbox" id="dish8" class="menu__dishesChoice__dish">
                 <label for="dish8" class="menu__dishesChoice__dish__label dish2">
-                    <div class="menu__dishesChoice__dish__label__descriptiveText">
-                        <h3>Macaron au chocolat d'exception</h3>
-                        <p>Et glace à la vanille de Madagascar</p>
-                    </div>
-                    <div class="menu__dishesChoice__dish__label__priceWrapper">
-                        <p>25€</p>
-                        <div class="checkIcon"><i class="fas fa-check-circle"></i></div>
-                    </div>
+                    <span class="menu__dishesChoice__dish__label__descriptiveText">
+                        <span>Macaron au chocolat d'exception</span>
+                        <span>Et glace à la vanille de Madagascar</span>
+                    </span>
+                    <span class="menu__dishesChoice__dish__label__priceWrapper">
+                        <span>18€</span>
+                        <span class="checkIcon"><i class="fas fa-check-circle"></i></span>
+                    </span>
                 </label>
             
             <input type="checkbox" id="dish9" class="menu__dishesChoice__dish">
                 <label for="dish9" class="menu__dishesChoice__dish__label dish3">
-                    <div class="menu__dishesChoice__dish__label__descriptiveText">
-                        <h3>Mousse au chocolat</h3>
-                        <p>Au piment d'Espelette et à la truffe noire</p>
-                    </div>
-                    <div class="menu__dishesChoice__dish__label__priceWrapper">
-                        <p>25€</p>
-                        <div class="checkIcon"><i class="fas fa-check-circle"></i></div>
-                    </div>
+                    <span class="menu__dishesChoice__dish__label__descriptiveText">
+                        <span>Mousse au chocolat</span>
+                        <span>Au piment d'Espelette et à la truffe noire</span>
+                    </span>
+                    <span class="menu__dishesChoice__dish__label__priceWrapper">
+                        <span>22€</span>
+                        <span class="checkIcon"><i class="fas fa-check-circle"></i></span>
+                    </span>
                 </label>
         </div>
 
+        <!--Order button down the page, not active yet -->
         <div class="menu__buttonWrapper">
             <button class="buttonGradient menu__buttonWrapper__orderButton">Commander</button>
         </div>
     </section>
 
+    <!--_______________________________________________-->
+    <!--similar footer as all pages -->
     <footer class="footer">
         <p class="footer__title">ohmyfood</p>
 
@@ -167,7 +186,8 @@
             <li class="footer__menu__item"><i class="fas fa-utensils"></i>Proposer un restaurant</li>
             <li class="footer__menu__item"><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
             <li class="footer__menu__item">Mentions légales</li>
-            <li class="footer__menu__item"><a href="#">Contact</a></li>
+            <li class="footer__menu__item"><a href="mailto:contact@ohmyfood.com?">Contact</a></li>
         </ul>
     </footer>
 </body>
+</html>

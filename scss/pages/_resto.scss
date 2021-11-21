@@ -1,10 +1,19 @@
-
+    /*Example picture top of the page*/
     .coverPicture
     {
-        padding: 0;
-        margin: 0;
-    }
+        display: flex;
+	    width: 100%;
+	    height: 20%;
+	    overflow: hidden;
+	    justify-content: center;
+	    align-items: center;
 
+        & img
+        {
+            width: 100%;
+        }
+    }
+/* menu section featuring each part of the meal*/
     .menu
     {
         display: flex;
@@ -32,8 +41,7 @@
             justify-content: space-between;
             position: relative;
 
-
-            @media (min-width: 1190px)
+            @media (min-width: 800px)
             {
                 width: 90%;
                 justify-content: center;
@@ -44,6 +52,7 @@
                 font-family: 'Shrikhand', cursive;
                 font-weight: 300;
                 font-size: 170%;
+                margin-left: 10px;
 
             }
             & .fa-heart
@@ -61,15 +70,16 @@
                 }             
             }
         }
-
+        /*3 boxes dishesChoice to help formatting*/
         &__dishesChoice
         {
-            height: 350px;
+            height: auto;
             width: 370px;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
-            margin: 0 0 5% 0;
+            margin: 0 0 50px 0;
+            padding: 0 0 0 10px;
 
             & h2
             {
@@ -82,7 +92,7 @@
                 margin: 0 0 0 1.5%;
                 padding: 0 0 1.5% 0;
             }
-
+            /* on checked status, will transit descriptiveText to 215px min-width and load the icon spinning animation */
             &__dish
             {   
                 &:checked
@@ -99,17 +109,19 @@
 
                         & .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle
                         {
-                            animation: checkIconSpin 650ms;
+                            animation: checkIconSpin cubic-bezier(.3,.6,.55,.93) 700ms;
+                            /* the transition for checked status only affect the descriptiveText which will retract on checked status*/
                         }
                     }
                 }
+                
                 &__label
                 {
                     height: 65px;
                     max-width: 340px;
                     display: flex;
                     align-items: center;
-                    margin-top: 1%;
+                    margin-top: 15px;
                     padding: 0;
                     border-radius: 15px 15px 15px 15px;
                     border: none;
@@ -129,24 +141,27 @@
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
-                        transition: min-width 500ms ease-in;
+                        transition: min-width 700ms ease-out;
 
 
-                        & h3
+                        & :first-child
                         {
+                            display: flex;
                             height: 30%;
                             align-items: center;
-                            margin: 0;
+                            margin: 0 0 5px 0;
                             padding: 0;
-                            font-weight: 500;
+                            font-weight: 700;
+                            font-size: 120%;
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
 
                             
                         }
-                        & > p
+                        & :nth-child(2)
                         {
+                            display: flex;
                             height: 30%;
                             margin: 0;
                             padding: 0;
@@ -158,33 +173,19 @@
                         }
                     }
 
-
+                    /* the priceWrapper is a movable block that get pulled from outside by descriptiveText shrinking on checked status*/
                     &__priceWrapper
                     {
                         display: flex;
-                        justify-content: flex-end;
+                        align-items: center;
                         height: 100%;
                         margin: 0;
                         padding: 0;
 
-
-
-                        & .checkIcon
+                        & :nth-child(1)
                         {
                             display: flex;
-                            width: 60px;
-                            font-size: 150%;
-                            justify-content: center;
-                            align-items: center;
-                            background-color: $color-tertiary;
-                            color: white;
-                            border-radius: 0 15px 15px 0;
-
-                        }
-                        & > p
-                        {
-                            display: flex;
-                            height: auto;
+                            height: 100%;
                             width: 60px;
                             margin: 0;
                             padding: 0 0 10% 0;
@@ -192,14 +193,39 @@
                             align-items: flex-end;
                             font-weight: 700;   
                         }
+
+                        & .checkIcon
+                        {
+                            display: flex;
+                            width: 60px;
+                            height: 65px;
+                            font-size: 150%;
+                            justify-content: center;
+                            text-align: center;
+                            align-items: center;
+                            background-color: $color-tertiary;
+                            color: white;
+                            border-radius: 0 15px 15px 0;
+
+                            & .fa-check-circle
+                            {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin: 0;
+                                padding: 0;
+                            }
+                        } 
                     }
                 }
             }
         }
+
+        /* Wrapper for formatting on different resolution and main button*/
         &__buttonWrapper
         {
             width: 370px;
-            height: 45px;
+            height: 100px;
             display: flex;
             justify-content: center;
             align-items: center;
