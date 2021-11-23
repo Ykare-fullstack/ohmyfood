@@ -273,15 +273,16 @@ body .footer__menu a {
 .likeIconCheckBox + .likeIconCheckBox__label .likeIconFull {
   z-index: 1;
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  transform: scale(0);
   font-size: 145%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: transform 1s ease-in;
+  transform-origin: bottom;
 }
 .likeIconCheckBox:checked + .likeIconCheckBox__label .likeIconFull {
-  opacity: 1;
+  transform: scale(1.1);
 }
 .likeIconCheckBox:checked + .likeIconCheckBox__label .likeIconEmpty {
   opacity: 0;
@@ -598,7 +599,7 @@ body .footer__menu a {
 }
 .menu__title {
   display: flex;
-  width: 370px;
+  width: 375px;
   align-items: center;
   justify-content: space-between;
   position: relative;
@@ -619,7 +620,7 @@ body .footer__menu a {
   margin: 0 5% 0 0;
   position: absolute;
   top: 35%;
-  right: 0;
+  right: 5px;
 }
 .menu__title input[type=checkbox] + .likeIconCheckBox__label .likeIconEmpty {
   color: #F2F2F2;
@@ -680,7 +681,7 @@ body .footer__menu a {
   transition: min-width 700ms ease-out;
 }
 .menu__dishesChoice__dish__label__descriptiveText :first-child {
-  display: flex;
+  display: inline-block;
   height: 30%;
   align-items: center;
   margin: 0 0 5px 0;
@@ -692,7 +693,7 @@ body .footer__menu a {
   text-overflow: ellipsis;
 }
 .menu__dishesChoice__dish__label__descriptiveText :nth-child(2) {
-  display: flex;
+  display: inline-block;
   height: 30%;
   margin: 0;
   padding: 0;

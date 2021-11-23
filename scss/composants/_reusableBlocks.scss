@@ -99,26 +99,30 @@
 
         & .likeIconFull
         {
+
             z-index: 1;
             background: -webkit-linear-gradient($color-primary, $color-secondary);
+            transform: scale(0);
             font-size: 145%;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
+            transition: transform 1s ease-in;
+            transform-origin: bottom;
         }
     }
     &:checked 
     {
         & + .likeIconCheckBox__label .likeIconFull
         {
-            opacity: 1;
+            transform: scale(1.1);
         }
         & + .likeIconCheckBox__label .likeIconEmpty
         {
             opacity: 0;
         }
+
+
     }
 }
 
