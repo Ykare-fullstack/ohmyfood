@@ -31,29 +31,37 @@ body input[type=checkbox] {
 }
 body .header {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
   min-height: 60px;
-  padding: 4% 0 0 0;
+  max-height: 90px;
+  width: 100%;
+  padding: 2% 0 2% 0;
+  margin: 0;
   position: relative;
+  background-color: white;
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.12);
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.12);
 }
-body .header__cont {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0 10px 0;
+@media (min-width: 1213px) {
+  body .header {
+    z-index: 1;
+  }
 }
-body .header__cont__icon {
+body .header__icon {
   font-size: 120%;
   position: absolute;
   top: 40%;
-  left: 25px;
+  left: 7%;
   color: black;
 }
-body .header__cont__img {
+body .header__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 45%;
-  max-height: 80px;
+  max-height: 75px;
 }
 body .footer {
   background-color: #404040;
@@ -282,7 +290,7 @@ body .footer__menu a {
   transform-origin: bottom;
 }
 .likeIconCheckBox:checked + .likeIconCheckBox__label .likeIconFull {
-  transform: scale(1.1);
+  transform: scale(1);
 }
 .likeIconCheckBox:checked + .likeIconCheckBox__label .likeIconEmpty {
   opacity: 0;
@@ -546,7 +554,7 @@ body .footer__menu a {
 .restaurants__cont__thumbnail .fa-heart {
   position: absolute;
   bottom: 30px;
-  right: 15px;
+  right: 17px;
 }
 .restaurants__cont__thumbnail__new {
   display: flex;
@@ -564,7 +572,10 @@ body .footer__menu a {
 }
 
 /*Example picture top of the page*/
-.coverPicture {
+body {
+  /* menu section featuring each part of the meal*/
+}
+body .coverPicture {
   display: flex;
   width: 100%;
   height: 20%;
@@ -572,12 +583,25 @@ body .footer__menu a {
   justify-content: center;
   align-items: center;
 }
-.coverPicture img {
+body .coverPicture img {
   width: 100%;
 }
-
-/* menu section featuring each part of the meal*/
-.menu {
+@media (min-width: 1213px) {
+  body .coverPicture img {
+    z-index: -1;
+  }
+}
+@media (min-width: 1213px) {
+  body .coverPicture {
+    z-index: -10;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 100%;
+    max-height: 800px;
+  }
+}
+body .menu {
   display: flex;
   border-radius: 27px 27px 0 0;
   flex-direction: column;
@@ -590,14 +614,22 @@ body .footer__menu a {
   /* Wrapper for formatting on different resolution and main button*/
 }
 @media (min-width: 800px) {
-  .menu {
+  body .menu {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 3%;
   }
 }
-.menu__title {
+@media (min-width: 1213px) {
+  body .menu {
+    background-color: rgba(242, 242, 242, 0.7);
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+}
+body .menu__title {
   display: flex;
   width: 375px;
   align-items: center;
@@ -605,27 +637,32 @@ body .footer__menu a {
   position: relative;
 }
 @media (min-width: 800px) {
-  .menu__title {
+  body .menu__title {
     width: 90%;
     justify-content: center;
   }
 }
-.menu__title__text {
+body .menu__title__text {
   font-family: "Shrikhand", cursive;
   font-weight: 300;
   font-size: 170%;
   margin-left: 10px;
 }
-.menu__title .fa-heart {
+body .menu__title .fa-heart {
   margin: 0 5% 0 0;
   position: absolute;
   top: 35%;
   right: 5px;
 }
-.menu__title input[type=checkbox] + .likeIconCheckBox__label .likeIconEmpty {
+@media (min-width: 1213px) {
+  body .menu__title .fa-heart {
+    right: 25%;
+  }
+}
+body .menu__title input[type=checkbox] + .likeIconCheckBox__label .likeIconEmpty {
   color: #F2F2F2;
 }
-.menu__dishesChoice {
+body .menu__dishesChoice {
   height: auto;
   width: 370px;
   display: flex;
@@ -635,7 +672,7 @@ body .footer__menu a {
   padding: 0 0 0 10px;
   /* on checked status, will transit descriptiveText to 215px min-width and load the icon spinning animation */
 }
-.menu__dishesChoice h2 {
+body .menu__dishesChoice h2 {
   display: flex;
   text-align: left;
   font-weight: 300;
@@ -645,14 +682,19 @@ body .footer__menu a {
   margin: 0 0 0 1.5%;
   padding: 0 0 1.5% 0;
 }
-.menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__descriptiveText {
+@media (min-width: 1213px) {
+  body .menu__dishesChoice h2 {
+    font-weight: 500;
+  }
+}
+body .menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__descriptiveText {
   min-width: 215px;
 }
-.menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle {
+body .menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle {
   animation: checkIconSpin cubic-bezier(0.3, 0.6, 0.55, 0.93) 700ms;
   /* the transition for checked status only affect the descriptiveText which will retract on checked status*/
 }
-.menu__dishesChoice__dish__label {
+body .menu__dishesChoice__dish__label {
   height: 65px;
   max-width: 340px;
   display: flex;
@@ -667,7 +709,7 @@ body .footer__menu a {
   box-shadow: 0px 14px 15px -7px rgba(0, 0, 0, 0.13);
   /* the priceWrapper is a movable block that get pulled from outside by descriptiveText shrinking on checked status*/
 }
-.menu__dishesChoice__dish__label__descriptiveText {
+body .menu__dishesChoice__dish__label__descriptiveText {
   display: flex;
   height: auto;
   flex-direction: column;
@@ -680,7 +722,7 @@ body .footer__menu a {
   text-overflow: ellipsis;
   transition: min-width 700ms ease-out;
 }
-.menu__dishesChoice__dish__label__descriptiveText :first-child {
+body .menu__dishesChoice__dish__label__descriptiveText :first-child {
   display: inline-block;
   height: 30%;
   align-items: center;
@@ -692,7 +734,7 @@ body .footer__menu a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu__dishesChoice__dish__label__descriptiveText :nth-child(2) {
+body .menu__dishesChoice__dish__label__descriptiveText :nth-child(2) {
   display: inline-block;
   height: 30%;
   margin: 0;
@@ -702,14 +744,14 @@ body .footer__menu a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu__dishesChoice__dish__label__priceWrapper {
+body .menu__dishesChoice__dish__label__priceWrapper {
   display: flex;
   align-items: center;
   height: 100%;
   margin: 0;
   padding: 0;
 }
-.menu__dishesChoice__dish__label__priceWrapper :nth-child(1) {
+body .menu__dishesChoice__dish__label__priceWrapper :nth-child(1) {
   display: flex;
   height: 100%;
   width: 60px;
@@ -719,7 +761,7 @@ body .footer__menu a {
   align-items: flex-end;
   font-weight: 700;
 }
-.menu__dishesChoice__dish__label__priceWrapper .checkIcon {
+body .menu__dishesChoice__dish__label__priceWrapper .checkIcon {
   display: flex;
   width: 60px;
   height: 65px;
@@ -731,26 +773,26 @@ body .footer__menu a {
   color: white;
   border-radius: 0 15px 15px 0;
 }
-.menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle {
+body .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
 }
-.menu__buttonWrapper {
-  width: 370px;
+body .menu__buttonWrapper {
+  width: 360px;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 1190px) {
-  .menu__buttonWrapper {
+@media (min-width: 1213px) {
+  body .menu__buttonWrapper {
     width: 100%;
   }
 }
-.menu__buttonWrapper__orderButton {
+body .menu__buttonWrapper__orderButton {
   font-weight: 500;
   width: 180px;
   height: 45px;
