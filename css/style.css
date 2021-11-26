@@ -18,6 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
   margin: 0;
   padding: 0;
   /*____________________________________________________________*/
@@ -33,8 +34,7 @@ body .header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
-  min-height: 60px;
+  height: 60px;
   max-height: 90px;
   width: 100%;
   padding: 2% 0 2% 0;
@@ -43,11 +43,6 @@ body .header {
   background-color: white;
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.12);
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.12);
-}
-@media (min-width: 1213px) {
-  body .header {
-    z-index: 1;
-  }
 }
 body .header__icon {
   font-size: 120%;
@@ -172,7 +167,7 @@ body .footer__menu a {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(1080deg);
   }
 }
 /*counter rotate the inside spining wheel to keep the logo stable*/
@@ -181,21 +176,21 @@ body .footer__menu a {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(-360deg);
+    transform: rotate(-1080deg);
   }
 }
 /*remove the loader from visibility and order it down below the page*/
 @keyframes spinnerFading {
   0% {
-    z-index: 1000;
+    z-index: 100;
     opacity: 0.9;
   }
   95% {
-    z-index: 1000;
+    z-index: 100;
     opacity: 0.9;
   }
   100% {
-    z-index: -1000;
+    z-index: -100;
     opacity: 0;
   }
 }
@@ -221,14 +216,14 @@ body .footer__menu a {
 #pageWrapper {
   display: flex;
   justify-content: center;
-  height: 100%;
   width: 100%;
+  height: 100%;
   background-color: white;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0.9;
-  z-index: 1000;
+  z-index: 100;
   animation: spinnerFading ease-in 3s;
   animation-fill-mode: forwards;
 }
@@ -238,7 +233,7 @@ body .footer__menu a {
   align-items: center;
   position: -webkit-sticky;
   position: sticky;
-  top: 350px;
+  top: 330px;
   width: 300px;
   height: 300px;
   background: #ff79da;
@@ -246,7 +241,7 @@ body .footer__menu a {
   font-size: 150%;
   border-radius: 50%;
   transform: rotate(0);
-  animation: spinningMachineSpinner 1s linear infinite;
+  animation: spinningMachineSpinner 3s linear;
 }
 #pageWrapper .spinner::after {
   display: flex;
@@ -264,8 +259,7 @@ body .footer__menu a {
   content: "ohmyfood";
   font-family: "Shrikhand", cursive;
   font-size: 180%;
-  opacity: 1;
-  animation: spinningMachineSpinnerReverse 1s linear infinite;
+  animation: spinningMachineSpinnerReverse 3s linear;
 }
 
 /* like icon in thumbnails and top of menu in "accueil" and "resto"*/
@@ -325,6 +319,7 @@ body .footer__menu a {
 /* Section of lines of information regarding the application offer and explore restaurant option */
 .info {
   display: flex;
+  width: 100%;
   height: 230px;
   background-color: #F2F2F2;
   flex-direction: column;
@@ -354,18 +349,12 @@ body .footer__menu a {
 .functioning {
   display: flex;
   flex-direction: column;
-  height: 330px;
-  max-height: 330px;
-  width: auto;
+  height: auto;
+  min-height: 200px;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 75px 0 75px 0;
-  /*height switch at 700px*/
-}
-@media (min-width: 700px) {
-  .functioning {
-    height: 200px;
-  }
 }
 .functioning h1 {
   width: 320px;
@@ -384,15 +373,13 @@ body .footer__menu a {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 300px;
-  width: 520px;
+  height: auto;
+  width: 100%;
   /*Formating switch at 700px*/
   /*Third tab changes for icon and background color*/
 }
 @media (min-width: 700px) {
   .functioning__cont {
-    height: 200px;
-    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -409,11 +396,11 @@ body .footer__menu a {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 100%;
+  width: 90%;
   max-width: 320px;
   height: 70px;
   border-radius: 20px;
-  margin: 0;
+  margin: 20px 20px 20px 20px;
   padding: 0;
   background-color: #F2F2F2;
   -webkit-box-shadow: 0px 14px 15px -7px rgba(0, 0, 0, 0.13);
@@ -421,7 +408,7 @@ body .footer__menu a {
 }
 @media (min-width: 700px) {
   .functioning__cont__tab {
-    margin: 0 2% 0 2%;
+    margin: 20px 15px 20px 15px;
   }
 }
 .functioning__cont__tab__numerotation {
@@ -456,6 +443,7 @@ body .footer__menu a {
   align-items: center;
   background-color: #F2F2F2;
   padding: 40px 0 40px 0;
+  width: 100%;
   /* container for tumbnails, to help with formatting*/
 }
 .restaurants h1 {
@@ -465,7 +453,6 @@ body .footer__menu a {
 @media (min-width: 700px) {
   .restaurants h1 {
     text-align: center;
-    width: 100%;
   }
 }
 .restaurants__cont {
@@ -473,26 +460,21 @@ body .footer__menu a {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 520px;
+  width: 100%;
   overflow: hidden;
+  max-width: 740px;
   /*Formatting switch to keep the thumnail section responsive to all formats */
 }
 @media (min-width: 740px) {
   .restaurants__cont {
     flex-direction: row;
     flex-wrap: wrap;
-    width: 740px;
     justify-content: space-evenly;
-  }
-}
-@media (min-width: 1150px) {
-  .restaurants__cont {
-    width: 800px;
   }
 }
 @media (min-width: 1620px) {
   .restaurants__cont {
-    width: 100%;
+    max-width: 100%;
   }
 }
 .restaurants__cont__thumbnail {
@@ -502,7 +484,6 @@ body .footer__menu a {
   width: 340px;
   height: 250px;
   flex-wrap: wrap;
-  max-height: 280px;
   margin: 0 0 15px 0;
   background-color: white;
   border-radius: 15px 15px 15px 15px;
@@ -519,7 +500,7 @@ body .footer__menu a {
 }
 .restaurants__cont__thumbnail__img {
   display: flex;
-  max-height: 175px;
+  height: 175px;
   border-radius: 15px 15px 0 0;
   overflow: hidden;
 }
@@ -572,10 +553,7 @@ body .footer__menu a {
 }
 
 /*Example picture top of the page*/
-body {
-  /* menu section featuring each part of the meal*/
-}
-body .coverPicture {
+.coverPicture {
   display: flex;
   width: 100%;
   height: 20%;
@@ -583,16 +561,16 @@ body .coverPicture {
   justify-content: center;
   align-items: center;
 }
-body .coverPicture img {
+.coverPicture img {
   width: 100%;
 }
 @media (min-width: 1213px) {
-  body .coverPicture img {
+  .coverPicture img {
     z-index: -1;
   }
 }
 @media (min-width: 1213px) {
-  body .coverPicture {
+  .coverPicture {
     z-index: -10;
     position: absolute;
     top: 0px;
@@ -601,7 +579,9 @@ body .coverPicture img {
     max-height: 800px;
   }
 }
-body .menu {
+
+/* menu section featuring each part of the meal*/
+.menu {
   display: flex;
   border-radius: 27px 27px 0 0;
   flex-direction: column;
@@ -614,7 +594,7 @@ body .menu {
   /* Wrapper for formatting on different resolution and main button*/
 }
 @media (min-width: 800px) {
-  body .menu {
+  .menu {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -622,14 +602,14 @@ body .menu {
   }
 }
 @media (min-width: 1213px) {
-  body .menu {
+  .menu {
     background-color: rgba(242, 242, 242, 0.7);
     margin: 0;
     border-radius: 0;
     padding: 0;
   }
 }
-body .menu__title {
+.menu__title {
   display: flex;
   width: 375px;
   align-items: center;
@@ -637,32 +617,32 @@ body .menu__title {
   position: relative;
 }
 @media (min-width: 800px) {
-  body .menu__title {
+  .menu__title {
     width: 90%;
     justify-content: center;
   }
 }
-body .menu__title__text {
+.menu__title__text {
   font-family: "Shrikhand", cursive;
   font-weight: 300;
   font-size: 170%;
   margin-left: 10px;
 }
-body .menu__title .fa-heart {
+.menu__title .fa-heart {
   margin: 0 5% 0 0;
   position: absolute;
   top: 35%;
   right: 5px;
 }
 @media (min-width: 1213px) {
-  body .menu__title .fa-heart {
+  .menu__title .fa-heart {
     right: 25%;
   }
 }
-body .menu__title input[type=checkbox] + .likeIconCheckBox__label .likeIconEmpty {
+.menu__title input[type=checkbox] + .likeIconCheckBox__label .likeIconEmpty {
   color: #F2F2F2;
 }
-body .menu__dishesChoice {
+.menu__dishesChoice {
   height: auto;
   width: 370px;
   display: flex;
@@ -672,7 +652,7 @@ body .menu__dishesChoice {
   padding: 0 0 0 10px;
   /* on checked status, will transit descriptiveText to 215px min-width and load the icon spinning animation */
 }
-body .menu__dishesChoice h2 {
+.menu__dishesChoice h2 {
   display: flex;
   text-align: left;
   font-weight: 300;
@@ -683,18 +663,18 @@ body .menu__dishesChoice h2 {
   padding: 0 0 1.5% 0;
 }
 @media (min-width: 1213px) {
-  body .menu__dishesChoice h2 {
+  .menu__dishesChoice h2 {
     font-weight: 500;
   }
 }
-body .menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__descriptiveText {
+.menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__descriptiveText {
   min-width: 215px;
 }
-body .menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle {
+.menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle {
   animation: checkIconSpin cubic-bezier(0.3, 0.6, 0.55, 0.93) 700ms;
   /* the transition for checked status only affect the descriptiveText which will retract on checked status*/
 }
-body .menu__dishesChoice__dish__label {
+.menu__dishesChoice__dish__label {
   height: 65px;
   max-width: 340px;
   display: flex;
@@ -709,7 +689,7 @@ body .menu__dishesChoice__dish__label {
   box-shadow: 0px 14px 15px -7px rgba(0, 0, 0, 0.13);
   /* the priceWrapper is a movable block that get pulled from outside by descriptiveText shrinking on checked status*/
 }
-body .menu__dishesChoice__dish__label__descriptiveText {
+.menu__dishesChoice__dish__label__descriptiveText {
   display: flex;
   height: auto;
   flex-direction: column;
@@ -722,7 +702,7 @@ body .menu__dishesChoice__dish__label__descriptiveText {
   text-overflow: ellipsis;
   transition: min-width 700ms ease-out;
 }
-body .menu__dishesChoice__dish__label__descriptiveText :first-child {
+.menu__dishesChoice__dish__label__descriptiveText :first-child {
   display: inline-block;
   height: 30%;
   align-items: center;
@@ -734,7 +714,7 @@ body .menu__dishesChoice__dish__label__descriptiveText :first-child {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body .menu__dishesChoice__dish__label__descriptiveText :nth-child(2) {
+.menu__dishesChoice__dish__label__descriptiveText :nth-child(2) {
   display: inline-block;
   height: 30%;
   margin: 0;
@@ -744,14 +724,14 @@ body .menu__dishesChoice__dish__label__descriptiveText :nth-child(2) {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body .menu__dishesChoice__dish__label__priceWrapper {
+.menu__dishesChoice__dish__label__priceWrapper {
   display: flex;
   align-items: center;
   height: 100%;
   margin: 0;
   padding: 0;
 }
-body .menu__dishesChoice__dish__label__priceWrapper :nth-child(1) {
+.menu__dishesChoice__dish__label__priceWrapper :nth-child(1) {
   display: flex;
   height: 100%;
   width: 60px;
@@ -761,7 +741,7 @@ body .menu__dishesChoice__dish__label__priceWrapper :nth-child(1) {
   align-items: flex-end;
   font-weight: 700;
 }
-body .menu__dishesChoice__dish__label__priceWrapper .checkIcon {
+.menu__dishesChoice__dish__label__priceWrapper .checkIcon {
   display: flex;
   width: 60px;
   height: 65px;
@@ -773,14 +753,14 @@ body .menu__dishesChoice__dish__label__priceWrapper .checkIcon {
   color: white;
   border-radius: 0 15px 15px 0;
 }
-body .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle {
+.menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
 }
-body .menu__buttonWrapper {
+.menu__buttonWrapper {
   width: 360px;
   height: 100px;
   display: flex;
@@ -788,11 +768,11 @@ body .menu__buttonWrapper {
   align-items: center;
 }
 @media (min-width: 1213px) {
-  body .menu__buttonWrapper {
+  .menu__buttonWrapper {
     width: 100%;
   }
 }
-body .menu__buttonWrapper__orderButton {
+.menu__buttonWrapper__orderButton {
   font-weight: 500;
   width: 180px;
   height: 45px;

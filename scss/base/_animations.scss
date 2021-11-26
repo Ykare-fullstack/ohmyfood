@@ -53,7 +53,7 @@
     }
     100%
     {
-        transform: rotate(360deg);
+        transform: rotate(1080deg);
     }
 }
 /*counter rotate the inside spining wheel to keep the logo stable*/
@@ -65,7 +65,7 @@
     }
     100%
     {
-        transform: rotate(-360deg);
+        transform: rotate(-1080deg);
     }
 }
 
@@ -74,17 +74,17 @@
 {
     0%
     {
-        z-index: 1000;
+        z-index: 100;
         opacity: 0.9;
     }
     95%
     {
-        z-index: 1000;
+        z-index: 100;
         opacity: 0.9;
     }
     100%
     {
-        z-index: -1000;
+        z-index: -100;
         opacity: 0;
     }
 }
