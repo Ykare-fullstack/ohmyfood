@@ -129,7 +129,7 @@
             /* on checked status, will transit descriptiveText to 215px min-width and load the icon spinning animation */
             &__dish
             {   
-                &:checked
+                &:hover
                 {
                     & + .menu__dishesChoice__dish__label
                     {

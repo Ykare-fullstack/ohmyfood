@@ -149,6 +149,42 @@ body .footer__menu a {
   animation-delay: calc(4 * 300ms);
 }
 
+.dish5 {
+  animation: appearingMenu 1s;
+  animation-fill-mode: both;
+  animation-delay: calc(5 * 300ms);
+}
+
+.dish6 {
+  animation: appearingMenu 1s;
+  animation-fill-mode: both;
+  animation-delay: calc(6 * 300ms);
+}
+
+.dish7 {
+  animation: appearingMenu 1s;
+  animation-fill-mode: both;
+  animation-delay: calc(7 * 300ms);
+}
+
+.dish8 {
+  animation: appearingMenu 1s;
+  animation-fill-mode: both;
+  animation-delay: calc(8 * 300ms);
+}
+
+.dish9 {
+  animation: appearingMenu 1s;
+  animation-fill-mode: both;
+  animation-delay: calc(9 * 300ms);
+}
+
+.dish10 {
+  animation: appearingMenu 1s;
+  animation-fill-mode: both;
+  animation-delay: calc(10 * 300ms);
+}
+
 /*rotate the checkIcon (see resto) as soon as visible*/
 @keyframes checkIconSpin {
   0% {
@@ -283,10 +319,10 @@ body .footer__menu a {
   transition: transform 1s ease-in;
   transform-origin: bottom;
 }
-.likeIconCheckBox:checked + .likeIconCheckBox__label .likeIconFull {
+.likeIconCheckBox:hover + .likeIconCheckBox__label .likeIconFull {
   transform: scale(1);
 }
-.likeIconCheckBox:checked + .likeIconCheckBox__label .likeIconEmpty {
+.likeIconCheckBox:hover + .likeIconCheckBox__label .likeIconEmpty {
   opacity: 0;
 }
 
@@ -667,10 +703,10 @@ body .footer__menu a {
     font-weight: 500;
   }
 }
-.menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__descriptiveText {
+.menu__dishesChoice__dish:hover + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__descriptiveText {
   min-width: 215px;
 }
-.menu__dishesChoice__dish:checked + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle {
+.menu__dishesChoice__dish:hover + .menu__dishesChoice__dish__label .menu__dishesChoice__dish__label__priceWrapper .checkIcon .fa-check-circle {
   animation: checkIconSpin cubic-bezier(0.3, 0.6, 0.55, 0.93) 700ms;
   /* the transition for checked status only affect the descriptiveText which will retract on checked status*/
 }
