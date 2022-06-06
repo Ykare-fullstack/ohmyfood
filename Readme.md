@@ -1,8 +1,8 @@
 # Projet 3 - OpenClassroom formation qualifiante WebDev #
 
-## TDynamisez une page web avec des animations CSS ##
+## Dynamisez une page web avec des animations CSS ##
 
-![BookiLogo](./assets/ohmyfood@2x.svg)
+![ohmyfoodLogo](./assets/ohmyfood%402x.svg)
 
 ### Compétences évaluées ###
 
@@ -75,4 +75,82 @@ Remarques :
 
 Très bon travail dans l’ensemble, projet validé !!!
 
- 
+English version :
+---------------------
+
+# Project 3 - OpenClassroom qualifying training program WebDev #
+
+## Energize a webpage with CSS animations ##
+
+![ohmyfoodLogo](./assets/ohmyfood%402x.svg)
+
+### Evaluated skills ###
+
+Basing on the project evaluation criteria, define the level of acquisition of each particular skill as such :
+
+- [X] Validated - Comment if needed
+
+- [ ] Not validated - List all non-filled criteria
+
+1. Setup a navigation structure for a website
+
+- [X] Validated
+
+Commentaries :
+
+All menu pages are accessible from the starting page.
+
+2. Setup a frontend environment
+
+- [X] Validated
+
+Commentaries :
+
+3. Use a versionning system to keep track of website changes.
+
+- [X] Validated
+
+Commentaries :
+
+Alan's integration is compliant to the model.
+
+4. Setup advanced graphical CSS effects.
+
+- [X] Validated
+
+Commentaries :
+
+All required animations are visible. nonetheless the arrival of dieshes should be eather one of each either all of them at the same time.
+
+5. Insure graphical coherence for the website
+
+- [X] Validated
+
+Commentaries :
+
+The loader spinner goes well with the graphical standard, Desktop and tablet versions keeps coherence with the website global theme.
+
+6. Delivrable
+
+Strong points :
+
+    Usage of SASS and BEM
+    All animations are functionnal
+    Coherence with the model
+    Usage of semantic tags
+    Indented and W3C validated code
+    Versionning done on github
+
+Improvements axes :
+
+    Avoid long classname using the BEM method.
+
+Oral
+
+commentaries :
+
+    Clear explanations despite a 5min less time on the given time. 
+    Fluid, correct answers to questions.
+    Careful not to forget an important point
+
+Very good work overall, project validated !!!
