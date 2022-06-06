@@ -2,7 +2,7 @@
 
 ## Dynamisez une page web avec des animations CSS ##
 
-![ohmyfoodLogo](./assets/ohmyfood.png)
+![ohmyfoodLogo](./assets/ohmyfoodlogo.png)
 
 ### Compétences évaluées ###
 
@@ -82,7 +82,7 @@ English version :
 
 ## Energize a webpage with CSS animations ##
 
-![ohmyfoodLogo](./assets/ohmyfood.png)
+![ohmyfoodLogo](./assets/ohmyfoodlogo.png)
 
 ### Evaluated skills ###
 
